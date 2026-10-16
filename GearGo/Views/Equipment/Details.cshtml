@@ -1,0 +1,9 @@
+@model GearGo.Models.Equipment
+
+<h2>@Model.Name Details</h2>
+<p><strong>Description:</strong> @Model.Description</p>
+<p><strong>Category:</strong> @Model.Category</p>
+<p><strong>Daily Rate:</strong> R@Model.DailyRate</p>
+<p><strong>Available:</strong> @(Model.IsAvailable ? "Yes" : "No")</p>
+
+<a asp-action="Index">Back to List</a>

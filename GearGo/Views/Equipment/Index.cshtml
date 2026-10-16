@@ -1,0 +1,26 @@
+@model IEnumerable<GearGo.Models.Equipment>
+
+<h2>Equipment List</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Daily Rate</th>
+            <th>Available</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Category</td>
+            <td>@item.DailyRate</td>
+            <td>@(item.IsAvailable ? "Yes" : "No")</td>
+            <td><a asp-action="Details" asp-route-id="@item.Id">View Details</a></td>
+        </tr>
+    }
+    </tbody>
+</table>
